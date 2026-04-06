@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Digital Ltda – Revendedor Autorizado Vero Internet</title>
+  <meta name="description" content="Mobile Digital Ltda é revendedora autorizada Vero Internet em Juiz de Fora, MG. Fibra óptica de alta performance para sua casa ou empresa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #080A0C;
+      --dark:    #0E1114;
+      --card:    #13171C;
+      --border:  #1E2530;
+      --cyan:    #00DCFB;
+      --cyan2:   #00B8D4;
+      --white:   #F5F5F5;
+      --muted:   #8A949F;
+      --font-display: 'Syne', sans-serif;
+      --font-body:    'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── GRID BACKGROUND ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── GLOW ── */
+    .glow {
+      position: fixed;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,220,251,0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      top: -200px; left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(8,10,12,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      height: 32px;
+      width: auto;
+    }
+
+    .nav-badge {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      border: 1px solid rgba(0,220,251,0.3);
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: rgba(0,220,251,0.06);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--cyan);
+      opacity: 0.5;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 6vw, 80px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 24px;
+      max-width: 900px;
+    }
+
+    .hero-title span {
+      color: var(--cyan);
+      position: relative;
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 600px;
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cyan);
+      color: var(--black);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,220,251,0.25);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--white);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      transform: translateY(-2px);
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat-item {
+      background: var(--dark);
+      padding: 36px 24px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800;
+      color: var(--cyan);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 24px;
+    }
+
+    .section-tag {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .section-body {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 620px;
+    }
+
+    /* ── SOBRE ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-text .section-body { margin-bottom: 32px; }
+
+    .about-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: border-color 0.2s;
+    }
+
+    .about-card:hover { border-color: rgba(0,220,251,0.3); }
+
+    .about-card-icon {
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      background: rgba(0,220,251,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .about-card-icon svg { width: 20px; height: 20px; fill: var(--cyan); }
+
+    .about-card-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .about-card-text { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* ── BADGE AUTORIZADO ── */
+    .auth-section {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .auth-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 24px;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .auth-badge {
+      flex-shrink: 0;
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      border: 2px solid var(--cyan);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: rgba(0,220,251,0.05);
+      gap: 4px;
+    }
+
+    .auth-badge-top {
+      font-family: var(--font-display);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    .auth-badge-main {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .auth-badge-sub {
+      font-family: var(--font-display);
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    .auth-text .section-title { margin-bottom: 16px; }
+    .auth-text .section-body { max-width: 100%; }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px 28px;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .contact-card:hover {
+      border-color: rgba(0,220,251,0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,220,251,0.08);
+    }
+
+    .contact-card-icon {
+      width: 48px; height: 48px;
+      border-radius: 10px;
+      background: rgba(0,220,251,0.08);
+      border: 1px solid rgba(0,220,251,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .contact-card-icon svg { width: 22px; height: 22px; fill: var(--cyan); }
+
+    .contact-card-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .contact-card-value {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      background: var(--dark);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-logo { height: 24px; }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--cyan); }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--muted);
+      width: 100%;
+      text-align: center;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      margin-top: 8px;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+    .hero-title   { animation: fadeUp 0.6s 0.1s ease both; }
+    .hero-sub     { animation: fadeUp 0.6s 0.2s ease both; }
+    .hero-cta     { animation: fadeUp 0.6s 0.3s ease both; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .stats-bar { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .auth-inner { flex-direction: column; text-align: center; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .footer-links { flex-wrap: wrap; gap: 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-cta { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="glow"></div>
+
+<!-- NAV -->
+<nav>
+  <svg class="nav-logo" viewBox="334.7095 299.4714 498.2 69.6343" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet"><defs></defs><style>.a6izo4zJpcolor{fill:#F5F5F5;fill-opacity:1;}.companyName{fill:#F5F5F5;fill-opacity:1;}.icon3{fill:#00DCFB;fill-opacity:1;}.shapeStroke-str{stroke:#F5F5F5;stroke-opacity:1;}</style><defs><filter x="336.3567" y="355.1057" width="494.9056" height="14" id="qwhg82QW8" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feMerge><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g opacity="1" transform="rotate(0 334.7095 299.4714)"><svg width="83.1617" height="46.1272" x="334.7095" y="299.4714" version="1.1" preserveAspectRatio="none" viewBox="-4 -4 75.6529 41.9338"><g transform="matrix(1 0 0 1 0 0)" class="a6izo4zJpcolor"><path d="M67.6529 0L0 0L0 32.9338L67.6529 32.9338L67.6529 0Z" style="fill-opacity:0;stroke:#F5F5F5;stroke-opacity:1;stroke-width:2.5;"/><path d="M33.4236 7.1727L26.5077 7.1727L26.5077 8.9397L33.4236 8.9397L33.4236 7.1727Z" class="icon3"/><path d="M41.1451 7.1727L34.2291 7.1727L34.2291 8.9397L41.1451 8.9397L41.1451 7.1727Z" style="fill:#F5F5F5;fill-opacity:1;"/><path d="M41.1451 9.7458L34.2291 9.7458L34.2291 11.5128L41.1451 11.5128L41.1451 9.7458Z" class="icon3"/><path d="M33.4236 9.7458L26.5077 9.7458L26.5077 11.5128L33.4236 11.5128L33.4236 9.7458Z" style="fill:#F5F5F5;fill-opacity:1;"/><path d="M33.4236 12.3461L26.5077 12.3461L26.5077 14.1131L33.4236 14.1131L33.4236 12.3461Z" class="icon3"/><path d="M41.1451 12.3461L34.2291 12.3461L34.2291 14.1131L41.1451 14.1131L41.1451 12.3461Z" style="fill:#F5F5F5;fill-opacity:1;"/><path d="M13.3264 7.1727L13.3264 14.1131L15.3264 14.1131L15.3264 9.1727L19.0752 9.1727L19.0752 14.1131L21.0752 14.1131L21.0752 7.1727Z" style="fill:#F5F5F5;fill-opacity:1;"/><path d="M46.5768 7.1727L46.5768 14.1131L48.5768 14.1131L48.5768 9.1727L52.3255 9.1727L52.3255 14.1131L54.3255 14.1131L54.3255 7.1727Z" style="fill:#F5F5F5;fill-opacity:1;"/><path d="M13.3264 19.8207L13.3264 25.7611L54.3255 25.7611L54.3255 19.8207Z" style="fill:#00DCFB;fill-opacity:1;"/></g></svg></g><g opacity="1" transform="rotate(0 417.8708 299.4714)"><svg width="331.8776" height="34.0004" x="417.8708" y="299.4714" version="1.1" preserveAspectRatio="none" viewBox="2.2 -28.6 281.12 28.8"><g transform="matrix(1 0 0 1 0 0)" class="companyName"><path d="M8 0L2.20 0L2.20-20.60L28.88-20.60Q32.40-20.60 34.04-18.86Q35.68-17.12 35.68-14.28L35.68-14.28L35.68 0L29.88 0L29.88-13.56Q29.88-16 27.40-16L27.40-16L21.84-16L21.84 0L16.04 0L16.04-16L8-16L8 0Z M57.84 0.20L50.44 0.20Q45.08 0.20 42.08-2.46Q39.08-5.12 39.08-10.28L39.08-10.28Q39.08-15.48 42.08-18.14Q45.08-20.80 50.44-20.80L50.44-20.80L57.84-20.80Q63.20-20.80 66.20-18.14Q69.20-15.48 69.20-10.28L69.20-10.28Q69.20-5.12 66.20-2.46Q63.20 0.20 57.84 0.20L57.84 0.20ZM50.44-4.40L50.44-4.40L57.84-4.40Q60.44-4.40 61.82-5.84Q63.20-7.28 63.20-10.28L63.20-10.28Q63.20-13.32 61.82-14.76Q60.44-16.20 57.84-16.20L57.84-16.20L50.44-16.20Q47.84-16.20 46.46-14.76Q45.08-13.32 45.08-10.28L45.08-10.28Q45.08-7.28 46.46-5.84Q47.84-4.40 50.44-4.40Z M78.60 0L72.80 0L72.80-28.60L78.60-28.60L78.60 0ZM87.60 0L73.80 0L73.80-4.60L87.60-4.60Q90.20-4.60 91.58-6.02Q92.96-7.44 92.96-10.28L92.96-10.28Q92.96-13.16 91.58-14.58Q90.20-16 87.60-16L87.60-16L74.20-16L74.20-20.60L87.60-20.60Q92.96-20.60 95.96-17.96Q98.96-15.32 98.96-10.28L98.96-10.28Q98.96-5.28 95.96-2.64Q92.96 0 87.60 0L87.60 0Z M108.36 0L102.56 0L102.56-20.60L108.36-20.60L108.36 0ZM108.40-24L102.52-24L102.52-28.52L108.40-28.52L108.40-24Z M118.56 0L112.76 0L112.76-28.60L118.56-28.60L118.56 0Z M149.72 0.20L133.52 0.20Q128.16 0.20 125.16-2.46Q122.16-5.12 122.16-10.28L122.16-10.28Q122.16-15.48 125.16-18.14Q128.16-20.80 133.52-20.80L133.52-20.80L143.52-20.80Q147.04-20.80 148.90-19.14Q150.76-17.48 150.76-14.40L150.76-14.40Q150.76-8.12 143.52-8.12L143.52-8.12L128.40-8.12Q129.24-4.40 133.52-4.40L133.52-4.40L149.72-4.40L149.72 0.20ZM143.24-16.20L133.52-16.20Q129.40-16.20 128.44-12.72L128.44-12.72L143.24-12.72Q144.04-12.72 144.50-13.20Q144.96-13.68 144.96-14.52L144.96-14.52Q144.96-16.20 143.24-16.20L143.24-16.20Z M178.72 0L172.92 0L172.92-16L166.96-16L166.96-20.60L172.92-20.60L172.92-22.20Q172.92-25.04 174.56-26.78Q176.20-28.52 179.68-28.52L179.68-28.52L188.40-28.52L188.40-23.92L181.12-23.92Q178.72-23.92 178.72-21.48L178.72-21.48L178.72-20.60L187.28-20.60L187.28-16L178.72-16L178.72 0Z M196.80 0L191 0L191-20.60L196.80-20.60L196.80 0ZM196.84-24L190.96-24L190.96-28.52L196.84-28.52L196.84-24Z M207 0L201.20 0L201.20-28.60L207-28.60L207 0ZM216 0L202.20 0L202.20-4.60L216-4.60Q218.60-4.60 219.98-6.02Q221.36-7.44 221.36-10.28L221.36-10.28Q221.36-13.16 219.98-14.58Q218.60-16 216-16L216-16L202.60-16L202.60-20.60L216-20.60Q221.36-20.60 224.36-17.96Q227.36-15.32 227.36-10.28L227.36-10.28Q227.36-5.28 224.36-2.64Q221.36 0 216 0L216 0Z M236.84 0L230.96 0L230.96-20.60L246.72-20.60Q250.20-20.60 251.84-18.86Q253.48-17.12 253.48-14.28L253.48-14.28L253.48-10L247.60-10L247.60-13.56Q247.60-15.96 245.20-15.96L245.20-15.96L236.84-15.96L236.84 0Z M283.32 0L262.16 0Q258.92 0 257.20-1.64Q255.48-3.28 255.48-6.32L255.48-6.32Q255.48-9.32 257.20-10.96Q258.92-12.60 262.16-12.60L262.16-12.60L277.52-12.60L277.52-13.56Q277.52-16 275.12-16L275.12-16L258.16-16L258.16-20.60L276.64-20.60Q280.28-20.60 281.80-18.94Q283.32-17.28 283.32-14.28L283.32-14.28L283.32 0ZM263.20-4.60L263.20-4.60L277.52-4.60L277.52-8L263.20-8Q262.44-8 262.02-7.54Q261.60-7.08 261.60-6.32L261.60-6.32Q261.60-5.56 262.02-5.08Q262.44-4.60 263.20-4.60Z"/></g></svg></g><g opacity="1" transform="rotate(0 334.7095 345.9165)"><svg width="113.7" height="3.6677" x="334.7095" y="345.9165" version="1.1" preserveAspectRatio="none" viewBox="0 0 113.7 3.6677"><defs><rect x="0" y="0" width="113.7" height="3.6677" rx="0px" ry="0px" id="id-o0jQam8yd"></rect></defs><use class="icon3 shapeStroke-str" style="stroke-width:0;" xlink:href="#id-o0jQam8yd"></use></svg></g></svg>
+  <span class="nav-badge">Revendedor Autorizado Vero</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Juiz de Fora, MG</p>
+  <h1 class="hero-title">
+    Conectando você à<br><span>fibra que você merece</span>
+  </h1>
+  <p class="hero-sub">
+    Somos revendedores autorizados Vero Internet há mais de 3 anos,
+    levando conectividade de alta performance para residências e empresas
+    na região de Juiz de Fora.
+  </p>
+  <div class="hero-cta">
+    <a href="https://ofertasverointernet.com.br" target="_blank" rel="noopener" class="btn-primary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 3L16.293 6.293 9.586 13H22v2H9.586l6.707 6.707L13 25 3 15z" transform="rotate(90 12 12)"/><path d="M5 3h14a2 2 0 012 2v4h-2V5H5v14h14v-4h2v4a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+      Ver planos disponíveis
+    </a>
+    <a href="https://wa.me/553128880720" target="_blank" rel="noopener" class="btn-secondary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-number">3+</div>
+    <div class="stat-label">Anos como revendedor</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">100%</div>
+    <div class="stat-label">Fibra óptica</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">JF</div>
+    <div class="stat-label">Juiz de Fora & região</div>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section>
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-tag">Sobre nós</p>
+        <h2 class="section-title">Quem é a<br>Mobile Digital?</h2>
+        <p class="section-body">
+          A Mobile Digital Ltda nasceu da missão de levar internet de qualidade
+          para quem realmente precisa. Como revendedores autorizados da Vero Internet,
+          atuamos diretamente na região de Juiz de Fora há mais de 3 anos, oferecendo
+          atendimento próximo, ágil e comprometido com a satisfação de cada cliente.
+        </p>
+        <p class="section-body" style="margin-top: 16px;">
+          Nossa parceria com a Vero garante que você tenha acesso a uma das redes de
+          fibra óptica mais robustas do Brasil, com a vantagem de contar com suporte
+          local especializado.
+        </p>
+      </div>
+      <div class="about-cards">
+        <div class="about-card">
+          <div class="about-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div>
+            <div class="about-card-title">Revendedor Autorizado</div>
+            <div class="about-card-text">Credenciados oficialmente pela Vero Internet para comercializar planos residenciais e empresariais.</div>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100 8 4 4 0 000-8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div>
+            <div class="about-card-title">Atendimento Local</div>
+            <div class="about-card-text">Suporte humano e próximo, sem call center genérico. Resolvemos sua questão com agilidade.</div>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3"/></svg>
+          </div>
+          <div>
+            <div class="about-card-title">Compromisso com Qualidade</div>
+            <div class="about-card-text">3 anos de experiência conectando famílias e empresas em Juiz de Fora e região.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTORIZAÇÃO -->
+<section class="auth-section">
+  <div class="auth-inner">
+    <div class="auth-badge">
+      <span class="auth-badge-top">Parceiro</span>
+      <span class="auth-badge-main">Vero<br>Internet</span>
+      <span class="auth-badge-sub">Autorizado</span>
+    </div>
+    <div class="auth-text">
+      <p class="section-tag">Credencial oficial</p>
+      <h2 class="section-title">Revendedor Autorizado<br>Vero Internet</h2>
+      <p class="section-body">
+        A Mobile Digital Ltda é uma empresa devidamente credenciada pela Vero Internet
+        como revendedora autorizada. Isso significa que ao contratar conosco, você tem
+        a garantia de um serviço legítimo, com toda a qualidade e suporte da Vero,
+        acrescido da atenção personalizada de uma empresa local.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section>
+  <div class="section-inner">
+    <p class="section-tag">Fale conosco</p>
+    <h2 class="section-title">Entre em contato</h2>
+    <p class="section-body">Tire dúvidas, contrate um plano ou solicite suporte. Estamos prontos para atender você.</p>
+
+    <div class="contact-grid">
+      <a href="https://wa.me/553128880720" target="_blank" rel="noopener" class="contact-card">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div class="contact-card-label">WhatsApp</div>
+        <div class="contact-card-value">(31) 2888-0720</div>
+      </a>
+
+      <a href="mailto:ricardo.andrade@mobilefibra.com.br" class="contact-card">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="contact-card-label">E-mail</div>
+        <div class="contact-card-value">ricardo.andrade@<br>mobilefibra.com.br</div>
+      </a>
+
+      <a href="https://ofertasverointernet.com.br" target="_blank" rel="noopener" class="contact-card">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <div class="contact-card-label">Planos & Ofertas</div>
+        <div class="contact-card-value">ofertasverointernet<br>.com.br</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <svg class="footer-logo" viewBox="334.7095 299.4714 498.2 69.6343" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet"><style>.companyName{fill:#F5F5F5;fill-opacity:1;}.icon3{fill:#00DCFB;fill-opacity:1;}</style><g opacity="1" transform="rotate(0 334.7095 299.4714)"><svg width="83.1617" height="46.1272" x="334.7095" y="299.4714" version="1.1" preserveAspectRatio="none" viewBox="-4 -4 75.6529 41.9338"><g transform="matrix(1 0 0 1 0 0)"><path d="M67.6529 0L0 0L0 32.9338L67.6529 32.9338L67.6529 0Z" style="fill-opacity:0;stroke:#F5F5F5;stroke-opacity:1;stroke-width:2.5;"/><path d="M33.4236 7.1727L26.5077 7.1727L26.5077 8.9397L33.4236 8.9397L33.4236 7.1727Z" class="icon3"/><path d="M41.1451 7.1727L34.2291 7.1727L34.2291 8.9397L41.1451 8.9397L41.1451 7.1727Z" style="fill:#F5F5F5;fill-opacity:1;"/><path d="M41.1451 9.7458L34.2291 9.7458L34.2291 11.5128L41.1451 11.5128L41.1451 9.7458Z" class="icon3"/><path d="M33.4236 9.7458L26.5077 9.7458L26.5077 11.5128L33.4236 11.5128L33.4236 9.7458Z" style="fill:#F5F5F5;fill-opacity:1;"/><path d="M33.4236 12.3461L26.5077 12.3461L26.5077 14.1131L33.4236 14.1131L33.4236 12.3461Z" class="icon3"/><path d="M41.1451 12.3461L34.2291 12.3461L34.2291 14.1131L41.1451 14.1131L41.1451 12.3461Z" style="fill:#F5F5F5;fill-opacity:1;"/><path d="M13.3264 19.8207L13.3264 25.7611L54.3255 25.7611L54.3255 19.8207Z" style="fill:#00DCFB;fill-opacity:1;"/></g></svg></g><g opacity="1" transform="rotate(0 417.8708 299.4714)"><svg width="331.8776" height="34.0004" x="417.8708" y="299.4714" version="1.1" preserveAspectRatio="none" viewBox="2.2 -28.6 281.12 28.8"><g transform="matrix(1 0 0 1 0 0)" class="companyName"><path d="M8 0L2.20 0L2.20-20.60L28.88-20.60Q32.40-20.60 34.04-18.86Q35.68-17.12 35.68-14.28L35.68-14.28L35.68 0L29.88 0L29.88-13.56Q29.88-16 27.40-16L27.40-16L21.84-16L21.84 0L16.04 0L16.04-16L8-16L8 0Z M57.84 0.20L50.44 0.20Q45.08 0.20 42.08-2.46Q39.08-5.12 39.08-10.28L39.08-10.28Q39.08-15.48 42.08-18.14Q45.08-20.80 50.44-20.80L50.44-20.80L57.84-20.80Q63.20-20.80 66.20-18.14Q69.20-15.48 69.20-10.28L69.20-10.28Q69.20-5.12 66.20-2.46Q63.20 0.20 57.84 0.20L57.84 0.20ZM50.44-4.40L50.44-4.40L57.84-4.40Q60.44-4.40 61.82-5.84Q63.20-7.28 63.20-10.28L63.20-10.28Q63.20-13.32 61.82-14.76Q60.44-16.20 57.84-16.20L57.84-16.20L50.44-16.20Q47.84-16.20 46.46-14.76Q45.08-13.32 45.08-10.28L45.08-10.28Q45.08-7.28 46.46-5.84Q47.84-4.40 50.44-4.40Z M78.60 0L72.80 0L72.80-28.60L78.60-28.60L78.60 0ZM87.60 0L73.80 0L73.80-4.60L87.60-4.60Q90.20-4.60 91.58-6.02Q92.96-7.44 92.96-10.28L92.96-10.28Q92.96-13.16 91.58-14.58Q90.20-16 87.60-16L87.60-16L74.20-16L74.20-20.60L87.60-20.60Q92.96-20.60 95.96-17.96Q98.96-15.32 98.96-10.28L98.96-10.28Q98.96-5.28 95.96-2.64Q92.96 0 87.60 0L87.60 0Z M108.36 0L102.56 0L102.56-20.60L108.36-20.60L108.36 0ZM108.40-24L102.52-24L102.52-28.52L108.40-28.52L108.40-24Z M118.56 0L112.76 0L112.76-28.60L118.56-28.60L118.56 0Z M149.72 0.20L133.52 0.20Q128.16 0.20 125.16-2.46Q122.16-5.12 122.16-10.28L122.16-10.28Q122.16-15.48 125.16-18.14Q128.16-20.80 133.52-20.80L133.52-20.80L143.52-20.80Q147.04-20.80 148.90-19.14Q150.76-17.48 150.76-14.40L150.76-14.40Q150.76-8.12 143.52-8.12L143.52-8.12L128.40-4.40L149.72-4.40L149.72 0.20ZM143.24-16.20L133.52-16.20Q129.40-16.20 128.44-12.72L128.44-12.72L143.24-12.72Q144.04-12.72 144.50-13.20Q144.96-13.68 144.96-14.52L144.96-14.52Q144.96-16.20 143.24-16.20L143.24-16.20Z M178.72 0L172.92 0L172.92-16L166.96-16L166.96-20.60L172.92-20.60L172.92-22.20Q172.92-25.04 174.56-26.78Q176.20-28.52 179.68-28.52L179.68-28.52L188.40-28.52L188.40-23.92L181.12-23.92Q178.72-23.92 178.72-21.48L178.72-21.48L178.72-20.60L187.28-20.60L187.28-16L178.72-16L178.72 0Z M196.80 0L191 0L191-20.60L196.80-20.60L196.80 0ZM196.84-24L190.96-24L190.96-28.52L196.84-28.52L196.84-24Z M207 0L201.20 0L201.20-28.60L207-28.60L207 0ZM216 0L202.20 0L202.20-4.60L216-4.60Q218.60-4.60 219.98-6.02Q221.36-7.44 221.36-10.28L221.36-10.28Q221.36-13.16 219.98-14.58Q218.60-16 216-16L216-16L202.60-16L202.60-20.60L216-20.60Q221.36-20.60 224.36-17.96Q227.36-15.32 227.36-10.28L227.36-10.28Q227.36-5.28 224.36-2.64Q221.36 0 216 0L216 0Z M236.84 0L230.96 0L230.96-20.60L246.72-20.60Q250.20-20.60 251.84-18.86Q253.48-17.12 253.48-14.28L253.48-14.28L253.48-10L247.60-10L247.60-13.56Q247.60-15.96 245.20-15.96L245.20-15.96L236.84-15.96L236.84 0Z M283.32 0L262.16 0Q258.92 0 257.20-1.64Q255.48-3.28 255.48-6.32L255.48-6.32Q255.48-9.32 257.20-10.96Q258.92-12.60 262.16-12.60L262.16-12.60L277.52-12.60L277.52-13.56Q277.52-16 275.12-16L275.12-16L258.16-16L258.16-20.60L276.64-20.60Q280.28-20.60 281.80-18.94Q283.32-17.28 283.32-14.28L283.32-14.28L283.32 0ZM263.20-4.60L263.20-4.60L277.52-4.60L277.52-8L263.20-8Q262.44-8 262.02-7.54Q261.60-7.08 261.60-6.32L261.60-6.32Q261.60-5.56 262.02-5.08Q262.44-4.60 263.20-4.60Z"/></g></svg></g></svg>
+    <div class="footer-links">
+      <a href="https://ofertasverointernet.com.br/politica-de-privacidade/" target="_blank">Política de Privacidade</a>
+      <a href="https://ofertasverointernet.com.br/exclusao-de-dados/" target="_blank">Exclusão de Dados</a>
+      <a href="https://ofertasverointernet.com.br" target="_blank">Ofertas Vero</a>
+    </div>
+    <p class="footer-copy">© 2026 Mobile Digital Ltda — CNPJ: [INSERIR CNPJ] — Revendedor Autorizado Vero Internet — Juiz de Fora, MG</p>
+  </div>
+</footer>
+
+</body>
+</html>
