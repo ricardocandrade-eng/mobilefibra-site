@@ -5,7 +5,7 @@ REM Alterações: Criação do script de deploy
 REM ============================================
 
 @echo off
-cd /d "C:\Users\SAMSUNG\OneDrive\Projeto Digital\mobilefibra-site"
+cd /d "%~dp0"
 
 echo.
 echo [mobilefibra-site] Iniciando deploy...
